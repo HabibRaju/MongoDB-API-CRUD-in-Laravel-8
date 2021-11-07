@@ -12,5 +12,5 @@ class Student extends Model
     protected $connection = 'mongodb';
     protected $collection = 'students';
 
-    protected $fillable = ['first_name', 'last_name', 'address'];
+    protected $fillable = ['first_name', 'last_name', 'address', 'name', 'roll'];
 }

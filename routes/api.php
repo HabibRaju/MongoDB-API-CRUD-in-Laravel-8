@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PassportAuthController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,7 @@ use App\Http\Controllers\StudentController;
 */
 Route::get('students', [StudentController::class, 'index']);
 Route::post('student-create', [StudentController::class, 'store']);
+Route::post('user-create', [UserController::class, 'store']);
 Route::get('student-show/{id}', [StudentController::class, 'show']);
 Route::post('student-update', [StudentController::class, 'update']);
 Route::post('student-delete', [StudentController::class, 'destroy']);

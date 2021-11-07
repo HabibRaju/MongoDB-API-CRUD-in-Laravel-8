@@ -40,17 +40,24 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        $student = new Student([
-            'first_name' => $request->first_name,
-            'last_name'=> $request->last_name,
-            'address'=> $request->address
-        ]);
+    //    return response()->json([
+    //        'names' => $request['name'],
+    //        'rolls' => $request['roll']
+    //    ]);
+       for($i=0; $i<count($request['name']); $i++){
+            $student = new Student([
+                'name' => $request['name'][$i],
+                'roll'=> $request['roll'][$i]
+            ]);
         
-        $student->save();
+            $student->save();
+       }
+       $message ="Student Create Sucessflly";
 
+       if(count($request['name'])>1)$mesage = "Students Create Successfully";
         return response()->json([
             'success' => true,
-            'Message'=> 'Student Create Successfully'
+            'message' => $message
         ]);
     }
 
